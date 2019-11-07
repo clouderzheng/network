@@ -19,8 +19,8 @@ public class Client {
             //发送消息
             PrintWriter writer = new PrintWriter(client.getOutputStream());
             writer.write("hello server");
-            writer.close();
             client.close();
+            writer.close();
             System.out.println("发送信息完毕");
         } catch (Exception e) {
             e.printStackTrace();
