@@ -18,14 +18,14 @@ public class TestServer {
      * @param args
      */
     public static void main(String[] args) {
-//        BusinessService businessService = new BusinessServiceImpl();
-//        JaxWsServerFactoryBean factoryBean = new JaxWsServerFactoryBean();
-//        factoryBean.setServiceClass(BusinessService.class);
-//        factoryBean.setAddress("http://localhost:9112/business");
-//        factoryBean.setServiceBean(businessService);
-//        factoryBean.create();
         BusinessService businessService = new BusinessServiceImpl();
-        Endpoint.publish("http://localhost:9112/business",businessService);
-        System.out.println("server start");
+        JaxWsServerFactoryBean factoryBean = new JaxWsServerFactoryBean();
+        factoryBean.setServiceClass(BusinessService.class);
+        factoryBean.setAddress("http://localhost:9112/business");
+        factoryBean.setServiceBean(businessService);
+        factoryBean.create();
+//        BusinessService businessService = new BusinessServiceImpl();
+//        Endpoint.publish("http://localhost:9112/business",businessService);
+//        System.out.println("server start");
     }
 }

@@ -4,3 +4,9 @@ CXF 是Apache 的顶级项目,也是目前java社区中用来实现 webservice�
 CXF 对用webservice 的服务器并没做多少封装，它仍然采用java se本身的webservice方式，只是提供了一个
 JaxWsServerFactoryBean类，从而可以在WebService被调用时增加一些拦截器的处理。客户端方面CXF则
 增加了封装，以便能够直接以借口的方式来调用远程的WebService
+
+
+注意：
+server端使用的是JaxWsServerFactoryBean
+client端使用的是JaxWsProxyFactoryBean
+

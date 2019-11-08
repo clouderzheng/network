@@ -1,6 +1,7 @@
 package com.night.cxf;
 
-import org.apache.cxf.jaxws.JaxWsServerFactoryBean;
+import com.night.cxf.service.BusinessService;
+import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 
 /**
  * @author night
@@ -14,11 +15,12 @@ public class TestClient {
      * @param args
      */
     public static void main(String[] args) {
-        JaxWsServerFactoryBean factoryBean = new JaxWsServerFactoryBean();
+        JaxWsProxyFactoryBean factoryBean = new JaxWsProxyFactoryBean();
         factoryBean.setServiceClass(BusinessService.class);
         factoryBean.setAddress("http://localhost:9112/business");
         BusinessService businessService =  (BusinessService)factoryBean.create();
-        businessService.echo("hello server  , i am cxf");
+        String resp = businessService.echo("hello server  , i am cxf");
+        System.out.println(resp);
 
     }
 }
