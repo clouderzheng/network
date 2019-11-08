@@ -9,4 +9,5 @@ JaxWsServerFactoryBean类，从而可以在WebService被调用时增加一些拦
 注意：
 server端使用的是JaxWsServerFactoryBean
 client端使用的是JaxWsProxyFactoryBean
+查看 wsdl可以在服务端启动后 输入url ：http://127.0.0.1:9112/business?wsdl
 

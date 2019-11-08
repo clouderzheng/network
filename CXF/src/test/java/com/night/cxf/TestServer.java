@@ -2,6 +2,7 @@ package com.night.cxf;
 
 import com.night.cxf.service.BusinessService;
 import com.night.cxf.service.impl.BusinessServiceImpl;
+import org.apache.cxf.endpoint.Server;
 import org.apache.cxf.jaxws.JaxWsServerFactoryBean;
 
 import javax.xml.ws.Endpoint;
@@ -23,7 +24,9 @@ public class TestServer {
         factoryBean.setServiceClass(BusinessService.class);
         factoryBean.setAddress("http://localhost:9112/business");
         factoryBean.setServiceBean(businessService);
-        factoryBean.create();
+        Server server = factoryBean.create();
+        server.start();
+
 //        BusinessService businessService = new BusinessServiceImpl();
 //        Endpoint.publish("http://localhost:9112/business",businessService);
 //        System.out.println("server start");
